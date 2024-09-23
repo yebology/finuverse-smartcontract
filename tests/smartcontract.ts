@@ -59,9 +59,9 @@ describe("smartcontract", () => {
         })
         .rpc();
         assert(false)
-    } catch (error) {
-      console.log(error);
-      assert(true);
+    } catch (err) {
+      const errMsg = err.error.errorMessage;
+      assert.strictEqual(errMsg, "Invalid rating.")
     }
   });
 
@@ -85,9 +85,9 @@ describe("smartcontract", () => {
         })
         .rpc();
         assert(false);
-    } catch (error) {
-      console.log(error);
-      assert(true);
+    } catch (err) {
+      const errMsg = err.error.errorMessage;
+      assert.strictEqual(errMsg, "Invalid course id.")
     }
   });
 });
