@@ -7,7 +7,7 @@ pub struct CoursePurchased {
 }
 
 #[event]
-pub struct CreateCoursed{
+pub struct CreateCoursed {
     pub creator: Pubkey,
     pub course_account: Pubkey,
 }

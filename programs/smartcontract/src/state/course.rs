@@ -25,21 +25,21 @@ impl Course {
     const ID_SPACE: usize = 8;
     const NAME_SPACE: usize = 4 + 100;
     const CREATOR_SPACE: usize = 32;
-    const DESCRIPTION_SPACE: usize = 4 + 300;
+    const DESCRIPTION_SPACE: usize = 4 + 150;
     const PRICE_SPACE: usize = 8;
     const BUYER_SPACE: usize = 8;
     const THUMBNAIL_SPACE: usize = 4 + 150;
-    const SECTION_TITLE_SPACE: usize = 3 * (4 + 100);
-    const SECTION_DESCRIPTION_SPACE: usize = 3 * (4 + 300);
+    const SECTION_TITLE_SPACE: usize = 4 + (3 * 150);
+    const SECTION_DESCRIPTION_SPACE: usize = 4 * (3 * 150);
     const SECTION_DURATION_SPACE: usize = 3 * 8;
-    const SECTION_VIDEO_SPACE: usize = 3 * (4 + 150);
-    const QUESTION_LIST_SPACE: usize = 3 * (4 + 100);
-    const ANSWER_LIST_SPACE: usize = 3 * (4 + 100);
-    const FIRST_ANSWER_OPTIONS_SPACE: usize = 4 * (4 + 50);
-    const SECOND_ANSWER_OPTIONS_SPACE: usize = 4 * (4 + 50);
-    const THIRD_ANSWER_OPTIONS_SPACE: usize = 4 * (4 + 50);
+    const SECTION_VIDEO_SPACE: usize = 4 + (3 * 150);
+    const QUESTION_LIST_SPACE: usize = 4 + (3 * 150);
+    const ANSWER_LIST_SPACE: usize = 4 + (3 * 150);
+    const FIRST_ANSWER_OPTIONS_SPACE: usize = 4 + (4 * 150);
+    const SECOND_ANSWER_OPTIONS_SPACE: usize = 4 + (4 * 150);
+    const THIRD_ANSWER_OPTIONS_SPACE: usize = 4 + (4 * 150);
 
-    pub const MAXIMUM_SIZE: usize = Self::DISCRIMINATOR_SPACE 
+    pub const MAXIMUM_SIZE: usize = Self::DISCRIMINATOR_SPACE
         + Self::ID_SPACE
         + Self::NAME_SPACE
         + Self::CREATOR_SPACE
