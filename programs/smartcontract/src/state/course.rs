@@ -21,6 +21,7 @@ pub struct Course {
 }
 
 impl Course {
+    const DISCRIMINATOR_SPACE: usize = 8;
     const ID_SPACE: usize = 8;
     const NAME_SPACE: usize = 4 + 100;
     const CREATOR_SPACE: usize = 32;
@@ -38,7 +39,8 @@ impl Course {
     const SECOND_ANSWER_OPTIONS_SPACE: usize = 4 * (4 + 50);
     const THIRD_ANSWER_OPTIONS_SPACE: usize = 4 * (4 + 50);
 
-    pub const MAXIMUM_SIZE: usize = Self::ID_SPACE
+    pub const MAXIMUM_SIZE: usize = Self::DISCRIMINATOR_SPACE 
+        + Self::ID_SPACE
         + Self::NAME_SPACE
         + Self::CREATOR_SPACE
         + Self::DESCRIPTION_SPACE
