@@ -4,4 +4,6 @@ use anchor_lang::prelude::*;
 pub enum CourseError {
     #[msg("Insufficient funds for the purchase.")]
     InsufficientFunds,
+    #[msg("Invalid Course Input")]
+    InvalidCourseInput,
 }
