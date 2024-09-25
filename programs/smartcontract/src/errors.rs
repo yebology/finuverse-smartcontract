@@ -5,5 +5,7 @@ pub enum FuniverseError {
     #[msg("Invalid course id.")]
     InvalidCourseId,
     #[msg("Invalid rating.")]
-    InvalidRating
+    InvalidRating,
+    #[msg("Invalid complete answer")]
+    InvalidCompleteAnswer
 }

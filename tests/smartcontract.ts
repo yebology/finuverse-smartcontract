@@ -12,6 +12,32 @@ describe("smartcontract", () => {
   const systemProgram = SystemProgram.programId;
   const user = provider.wallet;
 
+  it("can complete a course!", async () => {
+    const now = Math.floor(new Date().getTime() / 1000);
+    const id = new anchor.BN(now);
+    const course = new anchor.BN(3);
+
+    const courseId = id.toBuffer("le", 8);
+    const [completePda] = anchor.web3.PublicKey.findProgramAddressSync(
+      [Buffer.from("complete"), user.publicKey.toBuffer(), courseId],
+      program.programId
+    );
+
+    await program.methods
+      .completeCourse(id, course)
+      .accounts({
+        complete: completePda,
+        user: user.publicKey,
+        systemProgram: systemProgram,
+      })
+      .rpc();
+
+    const account = await program.account.complete.fetch(completePda);
+    assert.strictEqual(account.courseId.toString(), id.toString());
+    assert.strictEqual(account.user.toString(), user.publicKey.toString());
+    assert.strictEqual(account.correctAnswer.toString(), course.toString());
+  });
+  
   it("can rate a course!", async () => {
     const now = Math.floor(new Date().getTime() / 1000);
     const id = new anchor.BN(now);

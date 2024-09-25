@@ -10,7 +10,7 @@ use events::*;
 use state::*;
 use instructions::*;
 
-declare_id!("4DYP8c9XLTW88FrfPkJ1F1Ak4hcHLQy5kZXFo5QiJuAi");
+declare_id!("GHTaLRLyapNJumLVbyLpUYPesV9WiQBaVKTMKuawZtLh");
 
 #[program]
 pub mod smartcontract {
@@ -25,6 +25,19 @@ pub mod smartcontract {
             ctx,
             course_id,
             rating
+        )?;
+        Ok(())
+    }
+    
+    pub fn complete_course(
+        ctx: Context<CompleteCourse>,
+        course_id: u64,
+        correct_answer: u64
+    ) -> Result<()> {
+        instructions::complete_course::complete_handler(
+            ctx,
+            course_id,
+            correct_answer
         )?;
         Ok(())
     }
