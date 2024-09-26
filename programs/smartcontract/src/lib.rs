@@ -11,6 +11,17 @@ use instructions::*;
 use state::*;
 
 declare_id!("J2DZcUjM84mvzSm8HCoPFx58JouvJ6bogjRPdaeewghx");
+pub mod errors;
+pub mod events;
+pub mod state;
+pub mod instructions;
+
+use errors::*;
+use events::*;
+use state::*;
+use instructions::*;
+
+declare_id!("GHTaLRLyapNJumLVbyLpUYPesV9WiQBaVKTMKuawZtLh");
 
 #[program]
 pub mod smartcontract {
