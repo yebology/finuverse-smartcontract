@@ -34,14 +34,14 @@ pub fn rate_handler(
         (
             course_id > 0
         ),
-        FuniverseError::InvalidCourseId
+        CourseError::InvalidCourseId
     );
 
     require!(
         (
             rating >= 1 && rating <= 5
         ),
-        FuniverseError::InvalidRating
+        CourseError::InvalidRating
     );
 
     rate.course_id = course_id;

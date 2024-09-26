@@ -10,18 +10,7 @@ use events::*;
 use instructions::*;
 use state::*;
 
-declare_id!("J2DZcUjM84mvzSm8HCoPFx58JouvJ6bogjRPdaeewghx");
-pub mod errors;
-pub mod events;
-pub mod state;
-pub mod instructions;
-
-use errors::*;
-use events::*;
-use state::*;
-use instructions::*;
-
-declare_id!("GHTaLRLyapNJumLVbyLpUYPesV9WiQBaVKTMKuawZtLh");
+declare_id!("HU9CCiFbr4kvLbdbVQJDknb9m3Y5jQ3fqxiYgRQdvGMB");
 
 #[program]
 pub mod smartcontract {
@@ -65,6 +54,24 @@ pub mod smartcontract {
             first_answer_options,
             second_answer_options,
             third_answer_options,
+        )?;
+        Ok(())
+    }
+
+    pub fn rate_course(ctx: Context<RateCourse>, course_id: u64, rating: u64) -> Result<()> {
+        instructions::rate_course::rate_handler(ctx, course_id, rating)?;
+        Ok(())
+    }
+
+    pub fn complete_course(
+        ctx: Context<CompleteCourse>,
+        course_id: u64,
+        correct_answer: u64
+    ) -> Result<()> {
+        instructions::complete_course::complete_handler(
+            ctx,
+            course_id,
+            correct_answer
         )?;
         Ok(())
     }

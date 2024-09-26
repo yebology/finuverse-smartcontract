@@ -11,6 +11,8 @@ pub struct CreateCoursed {
     pub creator: Pubkey,
     pub course_account: Pubkey,
 }
+
+#[event]
 pub struct RateCreated {
     pub user : Pubkey,
     pub rating : u64,

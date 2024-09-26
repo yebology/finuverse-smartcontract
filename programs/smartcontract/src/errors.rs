@@ -6,8 +6,6 @@ pub enum CourseError {
     InsufficientFunds,
     #[msg("Invalid Course Input")]
     InvalidCourseInput,
-}
-pub enum FuniverseError {
     #[msg("Invalid course id.")]
     InvalidCourseId,
     #[msg("Invalid rating.")]

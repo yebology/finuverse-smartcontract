@@ -34,14 +34,14 @@ pub fn complete_handler(
         (
             course_id > 0
         ),
-        FuniverseError::InvalidCourseId
+        CourseError::InvalidCourseId
     );
 
     require!(
         (
             complete_answer >= 1 && complete_answer <= 3
         ),
-        FuniverseError::InvalidCompleteAnswer
+        CourseError::InvalidCompleteAnswer
     );
 
     complete.course_id = course_id;

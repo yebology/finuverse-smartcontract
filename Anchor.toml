@@ -5,13 +5,16 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-smartcontract = "J2DZcUjM84mvzSm8HCoPFx58JouvJ6bogjRPdaeewghx"
+smartcontract = "HU9CCiFbr4kvLbdbVQJDknb9m3Y5jQ3fqxiYgRQdvGMB"
+
+[programs.devnet]
+smartcontract = "HU9CCiFbr4kvLbdbVQJDknb9m3Y5jQ3fqxiYgRQdvGMB"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "/Users/louisfernando/.config/solana/id.json"
 
 [scripts]
