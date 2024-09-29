@@ -6,6 +6,7 @@ pub struct Course {
     pub name: String,
     pub creator: Pubkey,
     pub description: String,
+    pub category: u64,
     pub price: u64,
     pub buyer: u64,
     pub thumbnail: String,
@@ -26,6 +27,7 @@ impl Course {
     const NAME_SPACE: usize = 4 + 100;
     const CREATOR_SPACE: usize = 32;
     const DESCRIPTION_SPACE: usize = 4 + 150;
+    const CATEGORY_SPACE: usize = 8;
     const PRICE_SPACE: usize = 8;
     const BUYER_SPACE: usize = 8;
     const THUMBNAIL_SPACE: usize = 4 + 150;
@@ -44,6 +46,7 @@ impl Course {
         + Self::NAME_SPACE
         + Self::CREATOR_SPACE
         + Self::DESCRIPTION_SPACE
+        + Self::CATEGORY_SPACE
         + Self::PRICE_SPACE
         + Self::BUYER_SPACE
         + Self::THUMBNAIL_SPACE

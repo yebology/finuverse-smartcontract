@@ -27,6 +27,7 @@ pub fn create_handler(
     id: u64,
     name: String,
     description: String,
+    category: u64,
     price: u64,
     thumbnail: String,
     section_title: [String; 3],
@@ -45,6 +46,7 @@ pub fn create_handler(
         (id > 0
             && !name.is_empty()
             && !description.is_empty()
+            && (category == 1 || category == 2 || category == 3)
             && price > 0
             && !thumbnail.is_empty()
             && section_title.len() == 3
@@ -62,7 +64,9 @@ pub fn create_handler(
     course.name = name;
     course.creator = *ctx.accounts.creator.key;
     course.description = description;
+    course.category = category;
     course.price = price;
+    course.thumbnail = thumbnail;
     course.buyer = 0;
     course.section_title = section_title;
     course.section_description = section_description;

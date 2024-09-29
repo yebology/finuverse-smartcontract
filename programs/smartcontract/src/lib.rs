@@ -10,7 +10,7 @@ use events::*;
 use instructions::*;
 use state::*;
 
-declare_id!("HU9CCiFbr4kvLbdbVQJDknb9m3Y5jQ3fqxiYgRQdvGMB");
+declare_id!("FJ5vnDd8ev6yHiBfgx376u3dLULodyJzgVFxczSLEVfF");
 
 #[program]
 pub mod smartcontract {
@@ -26,6 +26,7 @@ pub mod smartcontract {
         id: u64,
         name: String,
         description: String,
+        category: u64,
         price: u64,
         thumbnail: String,
         section_title: [String; 3],
@@ -43,6 +44,7 @@ pub mod smartcontract {
             id,
             name,
             description,
+            category,
             price,
             thumbnail,
             section_title,
