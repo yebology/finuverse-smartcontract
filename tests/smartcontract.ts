@@ -17,6 +17,7 @@ describe("smartcontract", () => {
     const courseId = new anchor.BN(now);
     const name = "Introduction to Web Development";
     const description = "Learn the basics of web development, including HTML, CSS, and JavaScript.";
+    const category = new anchor.BN(1);
     const price = new anchor.BN(100);
     const thumbnail = "https://example.com/course-thumbnail.jpg";
 
@@ -76,6 +77,7 @@ describe("smartcontract", () => {
         courseId,
         name,
         description,
+        category,
         price,
         thumbnail,
         section_title,
