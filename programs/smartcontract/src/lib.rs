@@ -10,7 +10,7 @@ use events::*;
 use instructions::*;
 use state::*;
 
-declare_id!("B8Tzb2B8y8PMxtFwhF8jyjp5gcQLxMDAekiMNvSrCvAz");
+declare_id!("4DYP8c9XLTW88FrfPkJ1F1Ak4hcHLQy5kZXFo5QiJuAi");
 
 #[program]
 pub mod smartcontract {

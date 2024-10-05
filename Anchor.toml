@@ -4,18 +4,18 @@
 seeds = false
 skip-lint = false
 
-[programs.localnet]
-smartcontract = "B8Tzb2B8y8PMxtFwhF8jyjp5gcQLxMDAekiMNvSrCvAz"
-
 [programs.devnet]
-smartcontract = "B8Tzb2B8y8PMxtFwhF8jyjp5gcQLxMDAekiMNvSrCvAz"
+smartcontract = "4DYP8c9XLTW88FrfPkJ1F1Ak4hcHLQy5kZXFo5QiJuAi"
+
+[programs.localnet]
+smartcontract = "4DYP8c9XLTW88FrfPkJ1F1Ak4hcHLQy5kZXFo5QiJuAi"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "devnet"
-wallet = "keypair.json"
+cluster = "Devnet"
+wallet = "/home/yobel/.config/solana/id.json"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
